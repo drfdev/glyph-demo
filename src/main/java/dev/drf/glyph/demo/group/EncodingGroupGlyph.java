@@ -1,4 +1,6 @@
 package dev.drf.glyph.demo.group;
 
-public class EncodingGroupGlyph extends GroupGlyph {
+import dev.drf.glyph.demo.EncodingGlyph;
+
+public class EncodingGroupGlyph<EncodingGlyph> extends GroupGlyph implements EncodingGlyph {
 }
