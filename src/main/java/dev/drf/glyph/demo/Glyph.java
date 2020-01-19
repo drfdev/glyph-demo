@@ -18,16 +18,4 @@ public interface Glyph extends CharSequence {
     Glyph toUpperCase();
     Glyph toLowerCase();
     Glyph subGlyph(int start, int end);
-
-    @Override
-    default CharSequence subSequence(int start, int end) {
-        return subGlyph(start, end);
-    }
-
-    @Override
-    default String toString() {
-        StringBuilder builder = new StringBuilder();
-        build(builder);
-        return builder.toString();
-    }
 }
