@@ -2,7 +2,6 @@ package dev.drf.glyph.demo.group;
 
 import dev.drf.glyph.demo.Glyph;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class TextGlyph<T extends Glyph> extends GroupGlyph<T> {
@@ -20,12 +19,12 @@ public class TextGlyph<T extends Glyph> extends GroupGlyph<T> {
     }
 
     @Override
-    protected GroupGlyph<T> buildNewGroup(List<T> glyphs) {
+    protected TextGlyph<T> buildNewGroup(List<T> glyphs) {
         return new TextGlyph<>(glyphs);
     }
 
     @Override
-    public Glyph subGlyph(int start, int end) {
+    public TextGlyph<T> subGlyph(int start, int end) {
         // TODO
         return null;
     }

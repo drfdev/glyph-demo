@@ -17,31 +17,31 @@ public class SingleCharGlyph extends SingleGlyph {
     }
 
     @Override
-    public Glyph reverse() {
+    public SingleCharGlyph reverse() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph toUpperCase() {
+    public SingleCharGlyph toUpperCase() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph toLowerCase() {
+    public SingleCharGlyph toLowerCase() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph subGlyph(int start, int end) {
+    public SingleCharGlyph subGlyph(int start, int end) {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph copy() {
+    public SingleCharGlyph copy() {
         return new SingleCharGlyph(ch);
     }
 

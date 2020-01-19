@@ -9,31 +9,31 @@ public class ContentGlyph extends SingleGlyph {
     }
 
     @Override
-    public Glyph reverse() {
+    public ContentGlyph reverse() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph toUpperCase() {
+    public ContentGlyph toUpperCase() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph toLowerCase() {
+    public ContentGlyph toLowerCase() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph subGlyph(int start, int end) {
+    public ContentGlyph subGlyph(int start, int end) {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph copy() {
+    public ContentGlyph copy() {
         // TODO
         return null;
     }

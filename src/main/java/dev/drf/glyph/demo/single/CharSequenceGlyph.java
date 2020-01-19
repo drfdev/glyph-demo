@@ -9,31 +9,31 @@ public class CharSequenceGlyph extends SingleGlyph {
     }
 
     @Override
-    public Glyph reverse() {
+    public CharSequenceGlyph reverse() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph toUpperCase() {
+    public CharSequenceGlyph toUpperCase() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph toLowerCase() {
+    public CharSequenceGlyph toLowerCase() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph subGlyph(int start, int end) {
+    public CharSequenceGlyph subGlyph(int start, int end) {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph copy() {
+    public CharSequenceGlyph copy() {
         // TODO
         return null;
     }

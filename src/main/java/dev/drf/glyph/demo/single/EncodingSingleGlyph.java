@@ -18,31 +18,31 @@ public class EncodingSingleGlyph extends SingleGlyph implements EncodingGlyph {
     }
 
     @Override
-    public Glyph reverse() {
+    public EncodingSingleGlyph reverse() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph toUpperCase() {
+    public EncodingSingleGlyph toUpperCase() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph toLowerCase() {
+    public EncodingSingleGlyph toLowerCase() {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph subGlyph(int start, int end) {
+    public EncodingSingleGlyph subGlyph(int start, int end) {
         // TODO
         return null;
     }
 
     @Override
-    public Glyph copy() {
+    public EncodingSingleGlyph copy() {
         // TODO
         return null;
     }

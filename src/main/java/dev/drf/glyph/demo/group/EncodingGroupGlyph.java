@@ -1,10 +1,8 @@
 package dev.drf.glyph.demo.group;
 
 import dev.drf.glyph.demo.EncodingGlyph;
-import dev.drf.glyph.demo.Glyph;
 
 import java.nio.charset.Charset;
-import java.util.Iterator;
 import java.util.List;
 
 public class EncodingGroupGlyph<T extends EncodingGlyph> extends GroupGlyph<T> implements EncodingGlyph {
@@ -28,12 +26,12 @@ public class EncodingGroupGlyph<T extends EncodingGlyph> extends GroupGlyph<T> i
     }
 
     @Override
-    protected GroupGlyph<T> buildNewGroup(List<T> glyphs) {
+    protected EncodingGroupGlyph<T> buildNewGroup(List<T> glyphs) {
         return new EncodingGroupGlyph<>(glyphs);
     }
 
     @Override
-    public Glyph subGlyph(int start, int end) {
+    public EncodingGroupGlyph<T> subGlyph(int start, int end) {
         // TODO
         return null;
     }
