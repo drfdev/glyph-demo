@@ -52,14 +52,14 @@ abstract class GroupGlyph<T extends Glyph> extends AbstractGlyph implements Iter
     }
 
     @Override
-    public Glyph toUpperCase() {
+    public GroupGlyph<T> toUpperCase() {
         GroupGlyph<T> copy = copy();
         copy.forEach(Glyph::toUpperCase);
         return copy;
     }
 
     @Override
-    public Glyph toLowerCase() {
+    public GroupGlyph<T> toLowerCase() {
         GroupGlyph<T> copy = copy();
         copy.forEach(Glyph::toLowerCase);
         return copy;
@@ -77,7 +77,7 @@ abstract class GroupGlyph<T extends Glyph> extends AbstractGlyph implements Iter
         final int len = glyphs.size();
         List<T> reversed = new ArrayList<>(len);
         for (int i = 0; i < len; i++) {
-            reversed.add(i, (T) glyphs.get(i).copy());
+            reversed.add(i, glyphs.get(i).copy());
         }
         return buildNewGroup(reversed);
     }

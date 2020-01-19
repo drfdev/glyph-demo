@@ -14,9 +14,9 @@ public interface Glyph extends CharSequence {
      */
 
     void build(StringBuilder builder);
-    Glyph reverse();
-    Glyph toUpperCase();
-    Glyph toLowerCase();
-    Glyph subGlyph(int start, int end);
-    Glyph copy();
+    <T extends Glyph> T reverse();
+    <T extends Glyph> T toUpperCase();
+    <T extends Glyph> T toLowerCase();
+    <T extends Glyph> T subGlyph(int start, int end);
+    <T extends Glyph> T copy();
 }
