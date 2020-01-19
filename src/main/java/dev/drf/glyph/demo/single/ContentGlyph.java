@@ -33,6 +33,12 @@ public class ContentGlyph extends SingleGlyph {
     }
 
     @Override
+    public Glyph copy() {
+        // TODO
+        return null;
+    }
+
+    @Override
     public int length() {
         // TODO
         return 0;

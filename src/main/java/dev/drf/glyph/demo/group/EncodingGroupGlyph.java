@@ -5,65 +5,20 @@ import dev.drf.glyph.demo.Glyph;
 
 import java.nio.charset.Charset;
 import java.util.Iterator;
+import java.util.List;
 
 public class EncodingGroupGlyph<T extends EncodingGlyph> extends GroupGlyph<T> implements EncodingGlyph {
+    public EncodingGroupGlyph() {
+    }
+
+    public EncodingGroupGlyph(List<T> glyphs) {
+        super(glyphs);
+    }
+
     @Override
     public Charset encoding() {
         // TODO
         return null;
-    }
-
-    @Override
-    public int groupLength() {
-        // TODO
-        return 0;
-    }
-
-    @Override
-    public T glyphAt(int index) {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public GroupGlyph<T> subGroup(int start, int end) {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public void build(StringBuilder builder) {
-        // TODO
-    }
-
-    @Override
-    public Glyph reverse() {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public Glyph toUpperCase() {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public Glyph toLowerCase() {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public Glyph subGlyph(int start, int end) {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public int length() {
-        // TODO
-        return 0;
     }
 
     @Override
@@ -73,7 +28,12 @@ public class EncodingGroupGlyph<T extends EncodingGlyph> extends GroupGlyph<T> i
     }
 
     @Override
-    public Iterator<T> iterator() {
+    protected GroupGlyph<T> buildNewGroup(List<T> glyphs) {
+        return new EncodingGroupGlyph<>(glyphs);
+    }
+
+    @Override
+    public Glyph subGlyph(int start, int end) {
         // TODO
         return null;
     }

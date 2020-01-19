@@ -18,4 +18,5 @@ public interface Glyph extends CharSequence {
     Glyph toUpperCase();
     Glyph toLowerCase();
     Glyph subGlyph(int start, int end);
+    Glyph copy();
 }

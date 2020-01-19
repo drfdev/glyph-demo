@@ -3,59 +3,14 @@ package dev.drf.glyph.demo.group;
 import dev.drf.glyph.demo.Glyph;
 
 import java.util.Iterator;
+import java.util.List;
 
 public class TextGlyph<T extends Glyph> extends GroupGlyph<T> {
-    @Override
-    public int groupLength() {
-        // TODO
-        return 0;
+    public TextGlyph() {
     }
 
-    @Override
-    public T glyphAt(int index) {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public GroupGlyph<T> subGroup(int start, int end) {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public void build(StringBuilder builder) {
-        // TODO
-    }
-
-    @Override
-    public Glyph reverse() {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public Glyph toUpperCase() {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public Glyph toLowerCase() {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public Glyph subGlyph(int start, int end) {
-        // TODO
-        return null;
-    }
-
-    @Override
-    public int length() {
-        // TODO
-        return 0;
+    public TextGlyph(List<T> glyphs) {
+        super(glyphs);
     }
 
     @Override
@@ -65,7 +20,12 @@ public class TextGlyph<T extends Glyph> extends GroupGlyph<T> {
     }
 
     @Override
-    public Iterator<T> iterator() {
+    protected GroupGlyph<T> buildNewGroup(List<T> glyphs) {
+        return new TextGlyph<>(glyphs);
+    }
+
+    @Override
+    public Glyph subGlyph(int start, int end) {
         // TODO
         return null;
     }

@@ -42,6 +42,12 @@ public class EncodingSingleGlyph extends SingleGlyph implements EncodingGlyph {
     }
 
     @Override
+    public Glyph copy() {
+        // TODO
+        return null;
+    }
+
+    @Override
     public int length() {
         // TODO
         return 0;
