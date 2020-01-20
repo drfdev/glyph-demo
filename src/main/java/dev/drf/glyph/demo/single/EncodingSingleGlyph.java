@@ -1,7 +1,6 @@
 package dev.drf.glyph.demo.single;
 
 import dev.drf.glyph.demo.EncodingGlyph;
-import dev.drf.glyph.demo.Glyph;
 
 import java.nio.charset.Charset;
 

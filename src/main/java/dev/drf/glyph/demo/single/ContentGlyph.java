@@ -1,7 +1,5 @@
 package dev.drf.glyph.demo.single;
 
-import dev.drf.glyph.demo.Glyph;
-
 public class ContentGlyph extends SingleGlyph {
     @Override
     public void build(StringBuilder builder) {

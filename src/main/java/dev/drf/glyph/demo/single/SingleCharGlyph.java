@@ -1,7 +1,5 @@
 package dev.drf.glyph.demo.single;
 
-import dev.drf.glyph.demo.Glyph;
-
 import java.util.Objects;
 
 public class SingleCharGlyph extends SingleGlyph {
