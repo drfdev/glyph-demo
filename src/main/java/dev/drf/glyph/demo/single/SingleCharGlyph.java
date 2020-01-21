@@ -11,31 +11,27 @@ public class SingleCharGlyph extends SingleGlyph {
 
     @Override
     public void build(StringBuilder builder) {
-        // TODO
+        builder.append(ch);
     }
 
     @Override
     public SingleCharGlyph reverse() {
-        // TODO
-        return null;
+        return copy();
     }
 
     @Override
     public SingleCharGlyph toUpperCase() {
-        // TODO
-        return null;
+        return new SingleCharGlyph(Character.toUpperCase(ch));
     }
 
     @Override
     public SingleCharGlyph toLowerCase() {
-        // TODO
-        return null;
+        return new SingleCharGlyph(Character.toLowerCase(ch));
     }
 
     @Override
     public SingleCharGlyph subGlyph(int start, int end) {
-        // TODO
-        return null;
+        throw new UnsupportedOperationException("SingleCharGlyph not support subGlyph method");
     }
 
     @Override
@@ -45,14 +41,15 @@ public class SingleCharGlyph extends SingleGlyph {
 
     @Override
     public int length() {
-        // TODO
-        return 0;
+        return 1;
     }
 
     @Override
     public char charAt(int index) {
-        // TODO
-        return 0;
+        if (index != 0) {
+            throw new IllegalArgumentException("Illegal index, must be zero");
+        }
+        return ch;
     }
 
     @Override
