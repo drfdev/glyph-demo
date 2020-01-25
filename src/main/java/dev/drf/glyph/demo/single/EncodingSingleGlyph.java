@@ -6,17 +6,17 @@ import dev.drf.glyph.demo.encoding.Encoding;
 import static java.util.Objects.requireNonNull;
 
 public class EncodingSingleGlyph extends SingleGlyph implements EncodingGlyph {
-    private final Encoding charset;
+    private final Encoding encoding;
     private final byte[] bytes;
 
-    public EncodingSingleGlyph(Encoding charset, byte[] bytes) {
-        this.charset = requireNonNull(charset);
+    public EncodingSingleGlyph(Encoding encoding, byte[] bytes) {
+        this.encoding = requireNonNull(encoding);
         this.bytes = requireNonNull(bytes);
     }
 
     @Override
     public Encoding encoding() {
-        return charset;
+        return encoding;
     }
 
     @Override
