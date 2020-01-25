@@ -1,22 +1,21 @@
 package dev.drf.glyph.demo.single;
 
 import dev.drf.glyph.demo.EncodingGlyph;
-
-import java.nio.charset.Charset;
+import dev.drf.glyph.demo.encoding.Encoding;
 
 import static java.util.Objects.requireNonNull;
 
 public class EncodingSingleGlyph extends SingleGlyph implements EncodingGlyph {
-    private final Charset charset;
+    private final Encoding charset;
     private final byte[] bytes;
 
-    public EncodingSingleGlyph(Charset charset, byte[] bytes) {
+    public EncodingSingleGlyph(Encoding charset, byte[] bytes) {
         this.charset = requireNonNull(charset);
         this.bytes = requireNonNull(bytes);
     }
 
     @Override
-    public Charset encoding() {
+    public Encoding encoding() {
         return charset;
     }
 

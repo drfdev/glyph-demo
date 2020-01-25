@@ -1,8 +1,8 @@
 package dev.drf.glyph.demo.group;
 
 import dev.drf.glyph.demo.EncodingGlyph;
+import dev.drf.glyph.demo.encoding.Encoding;
 
-import java.nio.charset.Charset;
 import java.util.List;
 
 public class EncodingGroupGlyph<T extends EncodingGlyph> extends GroupGlyph<T> implements EncodingGlyph {
@@ -14,7 +14,7 @@ public class EncodingGroupGlyph<T extends EncodingGlyph> extends GroupGlyph<T> i
     }
 
     @Override
-    public Charset encoding() {
+    public Encoding encoding() {
         // TODO
         return null;
     }

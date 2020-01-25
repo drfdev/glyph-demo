@@ -1,7 +1,7 @@
 package dev.drf.glyph.demo;
 
-import java.nio.charset.Charset;
+import dev.drf.glyph.demo.encoding.Encoding;
 
 public interface EncodingGlyph extends Glyph {
-    Charset encoding();
+    Encoding encoding();
 }
