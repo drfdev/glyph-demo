@@ -5,4 +5,9 @@ public interface Encoding {
 
     EncodingEncoder encoder();
     EncodingDecoder decoder();
+
+    byte[] toUpperCase(byte[] bts);
+    byte[] toLowerCase(byte[] bts);
+
+    char toChar(byte[] bts);
 }
