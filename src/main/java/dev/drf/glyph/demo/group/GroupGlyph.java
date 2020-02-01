@@ -7,15 +7,20 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import static java.util.Objects.requireNonNull;
+
 abstract class GroupGlyph<T extends Glyph> extends AbstractGlyph implements Iterable<T> {
-    private List<T> glyphs;
+    protected List<T> glyphs;
+    protected int length;
 
     public GroupGlyph() {
         glyphs = new ArrayList<>();
+        recalculateLength();
     }
 
     public GroupGlyph(List<T> glyphs) {
-        this.glyphs = new ArrayList<>(glyphs);
+        this.glyphs = new ArrayList<>(requireNonNull(glyphs));
+        recalculateLength();
     }
 
     protected abstract GroupGlyph<T> buildNewGroup(List<T> glyphs);
@@ -34,6 +39,7 @@ abstract class GroupGlyph<T extends Glyph> extends AbstractGlyph implements Iter
 
     public void add(T glyph) {
         glyphs.add(glyph);
+        recalculateLength();
     }
 
     @Override
@@ -85,5 +91,13 @@ abstract class GroupGlyph<T extends Glyph> extends AbstractGlyph implements Iter
     @Override
     public Iterator<T> iterator() {
         return glyphs.iterator();
+    }
+
+    protected void recalculateLength() {
+        int length = 0;
+        for (T glyph : glyphs) {
+            length += glyph.length();
+        }
+        this.length = length;
     }
 }

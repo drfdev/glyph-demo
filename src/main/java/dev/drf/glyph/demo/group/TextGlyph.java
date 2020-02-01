@@ -14,8 +14,19 @@ public class TextGlyph<T extends Glyph> extends GroupGlyph<T> {
 
     @Override
     public char charAt(int index) {
-        // TODO
-        return 0;
+        if (index < 0 || index > length()) {
+            throw new IllegalArgumentException("Illegal index parameter: " + index);
+        }
+        int tempLength = 0;
+        int currentLength = 0;
+        for (T glyph : glyphs) {
+            tempLength += glyph.length();
+            if (index > tempLength) {
+                return glyph.charAt(currentLength + index);
+            }
+            currentLength = tempLength;
+        }
+        throw new IllegalArgumentException("Wrong index parameter: " + index);
     }
 
     @Override

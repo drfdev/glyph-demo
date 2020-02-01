@@ -5,18 +5,24 @@ import dev.drf.glyph.demo.encoding.Encoding;
 
 import java.util.List;
 
-public class EncodingGroupGlyph<T extends EncodingGlyph> extends GroupGlyph<T> implements EncodingGlyph {
-    public EncodingGroupGlyph() {
+import static java.util.Objects.requireNonNull;
+
+public class EncodingGroupGlyph<T extends EncodingGlyph> extends GroupGlyph<T>
+        implements EncodingGlyph {
+    private final Encoding encoding;
+
+    public EncodingGroupGlyph(Encoding encoding) {
+        this.encoding = requireNonNull(encoding);
     }
 
-    public EncodingGroupGlyph(List<T> glyphs) {
+    public EncodingGroupGlyph(Encoding encoding, List<T> glyphs) {
         super(glyphs);
+        this.encoding = requireNonNull(encoding);
     }
 
     @Override
     public Encoding encoding() {
-        // TODO
-        return null;
+        return encoding;
     }
 
     @Override
@@ -27,7 +33,7 @@ public class EncodingGroupGlyph<T extends EncodingGlyph> extends GroupGlyph<T> i
 
     @Override
     protected EncodingGroupGlyph<T> buildNewGroup(List<T> glyphs) {
-        return new EncodingGroupGlyph<>(glyphs);
+        return new EncodingGroupGlyph<>(encoding, glyphs);
     }
 
     @Override

@@ -18,6 +18,15 @@ public class EncodingSingleGlyphTest {
         @Override public EncodingDecoder decoder() {
             return null;
         }
+        @Override public byte[] toUpperCase(byte[] bts) {
+            return bts;
+        }
+        @Override public byte[] toLowerCase(byte[] bts) {
+            return bts;
+        }
+        @Override public char toChar(byte[] bts) {
+            return 0;
+        }
     };
 
     @Test
