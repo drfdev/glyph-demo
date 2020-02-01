@@ -26,12 +26,6 @@ public class EncodingGroupGlyph<T extends EncodingGlyph> extends GroupGlyph<T>
     }
 
     @Override
-    public char charAt(int index) {
-        // TODO
-        return 0;
-    }
-
-    @Override
     protected EncodingGroupGlyph<T> buildNewGroup(List<T> glyphs) {
         return new EncodingGroupGlyph<>(encoding, glyphs);
     }
