@@ -8,6 +8,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 
+import static java.lang.Math.max;
+import static java.lang.Math.min;
 import static java.util.Objects.requireNonNull;
 
 abstract class GroupGlyph<T extends Glyph> extends AbstractGlyph implements Iterable<T> {
@@ -131,7 +133,13 @@ abstract class GroupGlyph<T extends Glyph> extends AbstractGlyph implements Iter
         int glyphLength = 0;
         for (T glyph : glyphs) {
             glyphLength += glyph.length();
-            // TODO
+            if ((start >= firstIndex && start < glyphLength)
+                    || (end >= firstIndex && end < glyphLength)) {
+                sub.add(glyph.subGlyph(
+                        max(start - firstIndex, 0),
+                        min(end - firstIndex, glyph.length())
+                ));
+            }
             firstIndex = glyphLength;
         }
         return buildNewGroup(sub);

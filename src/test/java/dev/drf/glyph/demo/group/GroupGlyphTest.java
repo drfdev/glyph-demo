@@ -91,12 +91,18 @@ public class GroupGlyphTest {
         tg.add(g1);
         tg.add(g2);
 
-        TextGlyph sub1 = (TextGlyph) tg.subGlyph(0, 1);
-        TextGlyph sub2 = (TextGlyph) tg.subGlyph(2, 3);
+        TextGlyph sub1 = (TextGlyph) tg.subGlyph(0, 2);
+        TextGlyph sub2 = (TextGlyph) tg.subGlyph(2, 4);
         TextGlyph sub3 = (TextGlyph) tg.subGlyph(4, 6);
+
+        TextGlyph sub4 = (TextGlyph) tg.subGlyph(0, 3);
+        TextGlyph sub5 = (TextGlyph) tg.subGlyph(3, 6);
 
         assertEquals("ab", sub1.toString());
         assertEquals("cd", sub2.toString());
         assertEquals("ef", sub3.toString());
+
+        assertEquals("abc", sub4.toString());
+        assertEquals("def", sub5.toString());
     }
 }
