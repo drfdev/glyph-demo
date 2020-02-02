@@ -29,10 +29,4 @@ public class EncodingGroupGlyph<T extends EncodingGlyph> extends GroupGlyph<T>
     protected EncodingGroupGlyph<T> buildNewGroup(List<T> glyphs) {
         return new EncodingGroupGlyph<>(encoding, glyphs);
     }
-
-    @Override
-    public EncodingGroupGlyph<T> subGlyph(int start, int end) {
-        // TODO
-        return null;
-    }
 }

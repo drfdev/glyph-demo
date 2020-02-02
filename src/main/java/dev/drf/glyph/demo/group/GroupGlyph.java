@@ -6,6 +6,7 @@ import dev.drf.glyph.demo.Glyph;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 import static java.util.Objects.requireNonNull;
 
@@ -106,15 +107,50 @@ abstract class GroupGlyph<T extends Glyph> extends AbstractGlyph implements Iter
         if (index < 0 || index > length()) {
             throw new IllegalArgumentException("Illegal index parameter: " + index);
         }
-        int tempLength = 0;
-        int currentLength = 0;
+        int firstIndex = 0;
+        int glyphLength = 0;
         for (T glyph : glyphs) {
-            tempLength += glyph.length();
-            if (index > tempLength) {
-                return glyph.charAt(currentLength + index);
+            glyphLength += glyph.length();
+            if (index >= firstIndex && index < glyphLength) {
+                return glyph.charAt(index - firstIndex);
             }
-            currentLength = tempLength;
+            firstIndex = glyphLength;
         }
         throw new IllegalArgumentException("Wrong index parameter: " + index);
+    }
+
+    @Override
+    public GroupGlyph<T> subGlyph(int start, int end) {
+        int len = length();
+        if (start < 0 || end < 0 || end > len || start > end) {
+            throw new IllegalArgumentException("Illegal sub glyph parameter: start = "
+                    + start + ", end = " + end);
+        }
+        List<T> sub = new ArrayList<>();
+        int firstIndex = 0;
+        int glyphLength = 0;
+        for (T glyph : glyphs) {
+            glyphLength += glyph.length();
+            // TODO
+            firstIndex = glyphLength;
+        }
+        return buildNewGroup(sub);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        GroupGlyph<?> that = (GroupGlyph<?>) o;
+        return Objects.equals(glyphs, that.glyphs);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(glyphs);
     }
 }

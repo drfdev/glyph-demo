@@ -1,5 +1,6 @@
 package dev.drf.glyph.demo.group;
 
+import dev.drf.glyph.demo.single.CharSequenceGlyph;
 import dev.drf.glyph.demo.single.SingleCharGlyph;
 import org.junit.Test;
 
@@ -46,5 +47,56 @@ public class GroupGlyphTest {
 
         assertNotSame(sg1, copy.glyphAt(0));
         assertNotSame(sg2, copy.glyphAt(1));
+    }
+
+    @Test
+    public void charAtTest() {
+        SingleCharGlyph sg1 = new SingleCharGlyph('a');
+        SingleCharGlyph sg2 = new SingleCharGlyph('b');
+
+        TextGlyph tg = new TextGlyph();
+        tg.add(sg1);
+        tg.add(sg2);
+
+        char ch1 = tg.charAt(0);
+        char ch2 = tg.charAt(1);
+
+        assertEquals('a', ch1);
+        assertEquals('b', ch2);
+    }
+
+    @Test
+    public void charAt2Test() {
+        CharSequenceGlyph g1 = new CharSequenceGlyph("abc");
+        CharSequenceGlyph g2 = new CharSequenceGlyph("def");
+
+        TextGlyph tg = new TextGlyph();
+        tg.add(g1);
+        tg.add(g2);
+
+        assertEquals('a', tg.charAt(0));
+        assertEquals('b', tg.charAt(1));
+        assertEquals('c', tg.charAt(2));
+        assertEquals('d', tg.charAt(3));
+        assertEquals('e', tg.charAt(4));
+        assertEquals('f', tg.charAt(5));
+    }
+
+    @Test
+    public void subGlyphTest() {
+        CharSequenceGlyph g1 = new CharSequenceGlyph("abc");
+        CharSequenceGlyph g2 = new CharSequenceGlyph("def");
+
+        TextGlyph tg = new TextGlyph();
+        tg.add(g1);
+        tg.add(g2);
+
+        TextGlyph sub1 = (TextGlyph) tg.subGlyph(0, 1);
+        TextGlyph sub2 = (TextGlyph) tg.subGlyph(2, 3);
+        TextGlyph sub3 = (TextGlyph) tg.subGlyph(4, 6);
+
+        assertEquals("ab", sub1.toString());
+        assertEquals("cd", sub2.toString());
+        assertEquals("ef", sub3.toString());
     }
 }

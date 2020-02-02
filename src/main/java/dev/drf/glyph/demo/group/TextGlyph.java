@@ -16,10 +16,4 @@ public class TextGlyph<T extends Glyph> extends GroupGlyph<T> {
     protected TextGlyph<T> buildNewGroup(List<T> glyphs) {
         return new TextGlyph<>(glyphs);
     }
-
-    @Override
-    public TextGlyph<T> subGlyph(int start, int end) {
-        // TODO
-        return null;
-    }
 }
